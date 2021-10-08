@@ -6,7 +6,7 @@ import moment from 'moment'
 import { API_URL } from '../../constants';
 import anonymuser from '../../assets/anonymous.png'
 
-import "./index.scss";
+import "./index.scss"; 
 import eventBus from '../../common/EventBus';
 import { commentPost, deleteComment, likeOrUnLikePost,deleteCurrentPost, reportCurrentPost } from '../../actions/posts';
 import { Link } from 'react-router-dom';
@@ -90,12 +90,12 @@ class PostItem extends Component {
         this.button.disabled = true;
         this.setState({handleDeleteCurrentPost:true})
         this.props
-        .dispatch(deleteCurrentPost(this.props.post.id))
+        .dispatch(deleteCurrentPost(this.props.post.id)) 
         .then((data) =>{
             this.button.disabled = false;
             this.setState({handleDeleteCurrentPost:false})
             if(this.props.user.isAdmin && window.location.pathname=="/report-posts"){
-                window.location.reload() ;
+                window.location.reload() ; 
             }
         })
         .catch((error) => {
